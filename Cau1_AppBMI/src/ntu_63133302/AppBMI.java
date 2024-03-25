@@ -9,25 +9,24 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-
 public class AppBMI {
-	public static void main(String[] args) {
-		
-		JFrame window = new JFrame("Midterm Project ");
+    public static void main(String[] args) {
+        JFrame window = new JFrame("Midterm Project ");
         TitledBorder winTitle = new TitledBorder("App BMI ") ;
         winTitle.setTitleJustification(TitledBorder.CENTER);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(1000,600); 
         window.setResizable(false);
-        //parent panel
+        //khung lon
         JPanel pan = new JPanel();
+        
         pan.setLayout(null);
-        //left panel
+        //khung phai
         JPanel pan1 = new JPanel();
         pan1.setLayout(null);
         window.setContentPane(pan);
         pan.add(pan1);
-        TitledBorder panTitle = new TitledBorder(" Thông tin của người dùng  ") ; 
+        TitledBorder panTitle = new TitledBorder(" Thông tin của người dùng  ") ;       
         panTitle.setTitleJustification(TitledBorder.CENTER);
         pan.setBorder(winTitle);
         pan1.setBackground(Color.LIGHT_GRAY);
@@ -90,6 +89,7 @@ public class AppBMI {
         JLabel copyright = new JLabel("-----   Copyright by Hà Tứ Huy   -----");
         copyright.setBounds(350,545,300,20);
         pan.add(copyright,BorderLayout.PAGE_END);
+        //khung trai
         JPanel pan2 = new JPanel () ;
         pan2.setBounds(50,50,300,400);
         pan2.setBounds(pan1.getLocation().x+300,pan1.getLocation().x,500,pan1.getSize().height);
@@ -103,51 +103,54 @@ public class AppBMI {
         pan2.add(scrollPane);
         TableColumn column= null ;
         for (int i = 0; i < 6; i++) {
-            column = table.getColumnModel().getColumn(i);
-            if (i == 2) {
-                column.setPreferredWidth(100);
-            } else {
-                column.setPreferredWidth(75);
-                 }
+        column = table.getColumnModel().getColumn(i);
+        if (i == 2) {
+            column.setPreferredWidth(100);
+        } else {
+            column.setPreferredWidth(75);
+             }
+        }
+        Object data1 [] =  { 
+                      "Hà",
+                      "Tứ Huy",
+                      "20",
+                      "Nam ",
+                      "21",
+                      "Bình thường",
+                  } ;
+        model.addRow(data1);
+        table.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+        table.setFillsViewportHeight(true);
+        pan2.add(table.getTableHeader(),BorderLayout.NORTH);
+        pan2.add(table,BorderLayout.CENTER);
+        pan2.setBackground(Color.GRAY);
+        
+        
+        
+        addBtn.addActionListener(new ActionListener (){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double bmi = Double.parseDouble(poid.getValue().toString())/Math.pow(Double.parseDouble(aut.getValue().toString()),2);
+                String BMI = String.format("%1$,.2f", bmi);
+                if (name.getText()!="" && Lname.getText()!="" &&( male.isSelected() || female.isSelected())) {
+                    String gender ;
+                    if (male.isSelected()) gender = male.getText();else gender = female.getText();
+                    String remarque ;
+                    if (bmi >= 25.0) remarque = "Thừa cân" ; else if(bmi>=18.50 && bmi<=24.9) remarque = "Bình thường";
+                    else remarque = "Thiếu cân" ;
+                  Object data [] =  { 
+                      name.getText(),
+                      Lname.getText(),
+                      age.getValue(),
+                      gender,
+                      BMI,
+                      remarque
+                  };
+                  model.addRow(data);
+                }else JOptionPane.showMessageDialog(null, "Bạn đã thêm vào thành công!!");
             }
-            Object data1 [] =  { 
-                          "Hà",
-                          "Tứ Huy",
-                          "20",
-                          "Nam ",
-                          "21",
-                          "Bình thường",
-                      } ;
-            model.addRow(data1);
-            table.setFont(new Font("Times New Roman", Font.PLAIN, 13));
-            table.setFillsViewportHeight(true);
-            pan2.add(table.getTableHeader(),BorderLayout.NORTH);
-            pan2.add(table,BorderLayout.CENTER);
-            pan2.setBackground(Color.GRAY);
-            addBtn.addActionListener(new ActionListener (){
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    double bmi = Double.parseDouble(poid.getValue().toString())/Math.pow(Double.parseDouble(aut.getValue().toString()),2);
-                    String BMI = String.format("%1$,.2f", bmi);
-                    if (name.getText()!="" && Lname.getText()!="" &&( male.isSelected() || female.isSelected())) {
-                        String gender ;
-                        if (male.isSelected()) gender = male.getText();else gender = female.getText();
-                        String remarque ;
-                        if (bmi >= 25.0) remarque = "Thừa cân" ; else if(bmi>=18.50 && bmi<=24.9) remarque = "Bình thường";
-                        else remarque = "Thiếu cân" ;
-                      Object data [] =  { 
-                          name.getText(),
-                          Lname.getText(),
-                          age.getValue(),
-                          gender,
-                          BMI,
-                          remarque
-                      };
-                      model.addRow(data);
-                    }else JOptionPane.showMessageDialog(null, "Bạn đã thêm vào thành công!!");
-                }
-            });
-            search.getDocument().addDocumentListener(new DocumentListener () {
+        });
+        search.getDocument().addDocumentListener(new DocumentListener () {
                 @Override
                 public void insertUpdate(DocumentEvent e) {        
                         for (int i =0 ; i<model.getRowCount();i++) {
@@ -172,25 +175,23 @@ public class AppBMI {
                  table.clearSelection();
                 }
             });
-            
-            delete.addActionListener(new ActionListener () {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    int count =0 ;
-                        for (int i =0 ; i<model.getRowCount();i++) {    
-                            if (table.isRowSelected(i)) {
-                              count++ ;
-                            }
-                        } 
-                    if (count ==0) {
-                        JOptionPane.showMessageDialog(null, "Chọn để xoá!! ");
-                    }else    
-                     ((DefaultTableModel)table.getModel()).removeRow(table.getSelectedRow());  
-                }
-                
-            });
-            window.setVisible(true);
         
-	}
-
+        delete.addActionListener(new ActionListener () {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int count =0 ;
+                    for (int i =0 ; i<model.getRowCount();i++) {    
+                        if (table.isRowSelected(i)) {
+                          count++ ;
+                        }
+                    } 
+                if (count ==0) {
+                    JOptionPane.showMessageDialog(null, "Chọn để xoá!! ");
+                }else    
+                 ((DefaultTableModel)table.getModel()).removeRow(table.getSelectedRow());  
+            }
+            
+        });
+        window.setVisible(true);
+    }
 }
