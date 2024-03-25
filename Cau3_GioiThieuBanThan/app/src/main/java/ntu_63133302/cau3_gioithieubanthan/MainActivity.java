@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
         String tele="0123456789";
 
         String message =
-                "Name: " + name + "\t\t" +
+                "Họ tên: " + name + "\t\t" +
                 "Email: " + email + "\t\t" +
-                "Address: " + address + "\t\t" +
-                "Occupation: " + occupation + "\t\t" +
-                "Education: " + education + "\t\t" +
-                "Telephone: " + tele;
+
+                "nghề nghiệp: " + occupation + "\t\t" +
+
+                "trường: " + education + "\t\t" +
+                        "Đc: " + address + "\t\t" +
+                "sđt: " + tele;
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
