@@ -19,6 +19,15 @@ public class AppBMI {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(1000,600); 
         window.setResizable(false);
+        //parent panel
+        JPanel pan = new JPanel();
+        pan.setLayout(null);
+        //left panel
+        JPanel pan1 = new JPanel();
+        pan1.setLayout(null);
+        window.setContentPane(pan);
+        pan.add(pan1);
+        TitledBorder panTitle = new TitledBorder(" Thông tin của người dùng  ") ; 
         
 	}
 
