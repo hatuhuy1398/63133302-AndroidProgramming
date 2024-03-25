@@ -20,5 +20,28 @@ public class MainActivity extends AppCompatActivity {
                 shareProfile();
             }
         });
-
     }
+
+    private void shareProfile() {
+        String name = "Hà Tứ Huy";
+        String email = "huy.ht.63cntt@ntu.edu.vn";
+        String address = "Nha Trang, Khánh Hoà";
+        String occupation = "Sinh Viên";
+        String education = "NTU";
+        String tele="0123456789";
+
+        String message =
+                "Name: " + name + "\t\t" +
+                "Email: " + email + "\t\t" +
+                "Address: " + address + "\t\t" +
+                "Occupation: " + occupation + "\t\t" +
+                "Education: " + education + "\t\t" +
+                "Telephone: " + tele;
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My Profile");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, message);
+        startActivity(Intent.createChooser(shareIntent, "Share Profile via"));
+    }
+}
