@@ -118,7 +118,12 @@ public class AppBMI {
                           "21",
                           "Bình thường",
                       } ;
-            
+            model.addRow(data1);
+            table.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+            table.setFillsViewportHeight(true);
+            pan2.add(table.getTableHeader(),BorderLayout.NORTH);
+            pan2.add(table,BorderLayout.CENTER);
+            pan2.setBackground(Color.GRAY);
         
 	}
 
