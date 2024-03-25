@@ -147,6 +147,31 @@ public class AppBMI {
                     }else JOptionPane.showMessageDialog(null, "Bạn đã thêm vào thành công!!");
                 }
             });
+            search.getDocument().addDocumentListener(new DocumentListener () {
+                @Override
+                public void insertUpdate(DocumentEvent e) {        
+                        for (int i =0 ; i<model.getRowCount();i++) {
+                          if (Pattern.matches((String)search.getText(),(String) model.getValueAt(i,0))) {
+                              //System.out.println(model.getValueAt(i,j));
+                              table.setRowSelectionInterval(i,i);
+                              break;
+                            }else if (Pattern.matches((String)search.getText(),(String) model.getValueAt(i,1))) {
+                              //System.out.println(model.getValueAt(i,j));
+                              table.setRowSelectionInterval(i,i);
+                              break;  
+                          }
+                        }  
+                }
+                @Override
+                public void removeUpdate(DocumentEvent e) {
+                   table.clearSelection();  
+                }
+
+                @Override
+                public void changedUpdate(DocumentEvent e) {
+                 table.clearSelection();
+                }
+            });
         
 	}
 
