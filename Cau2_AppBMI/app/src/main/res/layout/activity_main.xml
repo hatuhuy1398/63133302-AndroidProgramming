@@ -74,4 +74,72 @@ app:layout_constraintTop_toBottomOf="@+id/edtCanNang" />
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtChieuCao" />
+    EditText
+    android:id="@+id/edtCanNang"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:ems="10"
+    android:inputType="number"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="79dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="156dp"
+        android:text="Kết quả: "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTuoi" />
+
+    <EditText
+        android:id="@+id/edtKetQua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="130dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        tools:ignore="MissingConstraints" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="118dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="39dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <RadioButton
+            android:id="@+id/radNu"
+            android:layout_width="83dp"
+            android:layout_height="47dp"
+            android:layout_marginEnd="56dp"
+            android:text="Nữ"
+            android:textColor="#045478"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radNam" />
+
+        <RadioButton
+            android:id="@+id/radNam"
+            android:layout_width="89dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="84dp"
+            android:checked="true"
+            android:text="Nam"
+            android:textColor="#045478"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
