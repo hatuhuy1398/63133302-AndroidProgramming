@@ -39,4 +39,39 @@ public class MainActivity extends AppCompatActivity {
         radNu = (RadioButton) findViewById(R.id.radNu);
         edtKetQua = (EditText) findViewById(R.id.edtKetQua);
     }
+    public void TinhBMI(){
+        btnTinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double chieuCao = Double.parseDouble(edtChieuCao.getText().toString());
+                double canNang = Double.parseDouble(edtCanNang.getText().toString());
+                double bmi = canNang / (chieuCao * chieuCao);
+                String ketQua = "";
+                // nữ
+                if(radNu.isChecked()){
+                    if(bmi < 19){
+                        ketQua = "Bạn gầy. Cần tăng cân ngay!";
+                    }else if(bmi >= 19 && bmi < 24){
+                        ketQua = "Bạn bình thường! Hãy giữ vững cân nặng";
+                    }else if(bmi >= 24 && bmi < 30){
+                        ketQua = "Bạn béo phì. Cần giảm cân ngay!";
+                    }else{
+                        ketQua = "Bạn béo phì cấp độ 2 .Cần giảm cân ngay!";
+                    }
+                }else{
+                    // nam
+                    if(bmi < 20){
+                        ketQua = "Bạn gầy.  Cần tăng cân ngay!";
+                    }else if(bmi >= 20 && bmi < 25){
+                        ketQua = "Bạn bình thường.  Hãy giữ vững cân nặng";
+                    }else if(bmi >= 25 && bmi < 30){
+                        ketQua = "Bạn béo phì.  Cần giảm cân ngay!";
+                    }else{
+                        ketQua = "Bạn béo phì cấp độ 2. Cần giảm cân ngay!";
+                    }
+                }
+                edtKetQua.setText(ketQua);
+            }
+        });
+    }
 }
