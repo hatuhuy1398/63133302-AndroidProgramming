@@ -90,6 +90,35 @@ public class AppBMI {
         JLabel copyright = new JLabel("-----   Copyright by Hà Tứ Huy   -----");
         copyright.setBounds(350,545,300,20);
         pan.add(copyright,BorderLayout.PAGE_END);
+        JPanel pan2 = new JPanel () ;
+        pan2.setBounds(50,50,300,400);
+        pan2.setBounds(pan1.getLocation().x+300,pan1.getLocation().x,500,pan1.getSize().height);
+        pan2.setBorder(BorderFactory.createLineBorder(Color.black));
+        pan.add(pan2);
+        String[] columns = {"Họ ","Tên ","Tuổi ","Giới Tính ","Chỉ số BMI","Trạng thái "};
+        DefaultTableModel model = new DefaultTableModel(columns,0);
+        JTable table = new JTable(model);
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setVisible(true);
+        pan2.add(scrollPane);
+        TableColumn column= null ;
+        for (int i = 0; i < 6; i++) {
+            column = table.getColumnModel().getColumn(i);
+            if (i == 2) {
+                column.setPreferredWidth(100);
+            } else {
+                column.setPreferredWidth(75);
+                 }
+            }
+            Object data1 [] =  { 
+                          "Hà",
+                          "Tứ Huy",
+                          "20",
+                          "Nam ",
+                          "21",
+                          "Bình thường",
+                      } ;
+            
         
 	}
 
