@@ -45,6 +45,16 @@ public class AppBMI {
         pan1.add(addBtn);
         pan1.add(name);
         pan1.add(Lname);
+        JTextField search = new JTextField();
+        pan.add(search);
+        JLabel FName = new JLabel ("Họ :");
+        JLabel LName = new JLabel ("Tên :");
+        JLabel sexe = new JLabel ("Giới tính  :");
+        JLabel bd = new JLabel ("Tuổi  :");
+        JLabel field = new JLabel ("Chiều cao");
+        JLabel field2 = new JLabel ("Cân nặng");
+        JLabel searchLab = new JLabel ("Tìm kiếm");
+        pan.add(searchLab);
         
 	}
 
