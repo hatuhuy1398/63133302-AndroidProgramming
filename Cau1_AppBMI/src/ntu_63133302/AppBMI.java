@@ -18,6 +18,8 @@ public class AppBMI {
         winTitle.setTitleJustification(TitledBorder.CENTER);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(1000,600); 
+        window.setResizable(false);
+        
 	}
 
 }
