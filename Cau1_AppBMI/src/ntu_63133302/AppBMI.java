@@ -38,6 +38,13 @@ public class AppBMI {
         JButton delete = new JButton ("Xoá");
         pan.add(delete);
         delete.setBounds(670,470,150,20);
+        JTextField name = new JTextField() ;
+        name.setBounds(40,40,120,20);
+        JTextField Lname = new JTextField();
+        Lname.setBounds(name.getLocation().x,name.getLocation().x+40,120,20);
+        pan1.add(addBtn);
+        pan1.add(name);
+        pan1.add(Lname);
         
 	}
 
