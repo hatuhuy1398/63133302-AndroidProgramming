@@ -172,6 +172,24 @@ public class AppBMI {
                  table.clearSelection();
                 }
             });
+            
+            delete.addActionListener(new ActionListener () {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int count =0 ;
+                        for (int i =0 ; i<model.getRowCount();i++) {    
+                            if (table.isRowSelected(i)) {
+                              count++ ;
+                            }
+                        } 
+                    if (count ==0) {
+                        JOptionPane.showMessageDialog(null, "Chọn để xoá!! ");
+                    }else    
+                     ((DefaultTableModel)table.getModel()).removeRow(table.getSelectedRow());  
+                }
+                
+            });
+            window.setVisible(true);
         
 	}
 
