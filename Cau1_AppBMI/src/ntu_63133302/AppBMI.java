@@ -124,6 +124,29 @@ public class AppBMI {
             pan2.add(table.getTableHeader(),BorderLayout.NORTH);
             pan2.add(table,BorderLayout.CENTER);
             pan2.setBackground(Color.GRAY);
+            addBtn.addActionListener(new ActionListener (){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    double bmi = Double.parseDouble(poid.getValue().toString())/Math.pow(Double.parseDouble(aut.getValue().toString()),2);
+                    String BMI = String.format("%1$,.2f", bmi);
+                    if (name.getText()!="" && Lname.getText()!="" &&( male.isSelected() || female.isSelected())) {
+                        String gender ;
+                        if (male.isSelected()) gender = male.getText();else gender = female.getText();
+                        String remarque ;
+                        if (bmi >= 25.0) remarque = "Thừa cân" ; else if(bmi>=18.50 && bmi<=24.9) remarque = "Bình thường";
+                        else remarque = "Thiếu cân" ;
+                      Object data [] =  { 
+                          name.getText(),
+                          Lname.getText(),
+                          age.getValue(),
+                          gender,
+                          BMI,
+                          remarque
+                      };
+                      model.addRow(data);
+                    }else JOptionPane.showMessageDialog(null, "Bạn đã thêm vào thành công!!");
+                }
+            });
         
 	}
 
