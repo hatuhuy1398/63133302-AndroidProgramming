@@ -28,6 +28,16 @@ public class AppBMI {
         window.setContentPane(pan);
         pan.add(pan1);
         TitledBorder panTitle = new TitledBorder(" Thông tin của người dùng  ") ; 
+        panTitle.setTitleJustification(TitledBorder.CENTER);
+        pan.setBorder(winTitle);
+        pan1.setBackground(Color.LIGHT_GRAY);
+        pan1.setBounds(50,50,200,400);
+        pan1.setBorder(panTitle);
+        JButton addBtn = new JButton ("Thêm");
+        addBtn.setBounds(30,370,150,20);
+        JButton delete = new JButton ("Xoá");
+        pan.add(delete);
+        delete.setBounds(670,470,150,20);
         
 	}
 
