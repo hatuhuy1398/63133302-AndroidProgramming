@@ -22,5 +22,21 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radNam;
     RadioButton radNu;
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        TimView();
+        TinhBMI();
+    }
+    public void TimView(){
+        edtTuoi = (EditText) findViewById(R.id.edtTuoi);
+        edtChieuCao = (EditText) findViewById(R.id.edtChieuCao);
+        edtCanNang = (EditText) findViewById(R.id.edtCanNang);
+        btnTinh = (Button) findViewById(R.id.btnTinh);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radNam = (RadioButton) findViewById(R.id.radNam);
+        radNu = (RadioButton) findViewById(R.id.radNu);
+        edtKetQua = (EditText) findViewById(R.id.edtKetQua);
+    }
 }
