@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         ketQua = "Bạn béo phì cấp độ 2. Cần giảm cân ngay!";
                     }
                 }
-                edtKetQua.setText(ketQua);
+                edtKetQua.setText("Chỉ số BMI của bạn là: " + bmi + "\n" + ketQua);
             }
         });
     }
