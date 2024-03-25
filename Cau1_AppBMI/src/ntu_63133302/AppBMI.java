@@ -55,6 +55,41 @@ public class AppBMI {
         JLabel field2 = new JLabel ("Cân nặng");
         JLabel searchLab = new JLabel ("Tìm kiếm");
         pan.add(searchLab);
+        searchLab.setBounds(delete.getLocation().x-320,delete.getLocation().y , delete.getSize().width,delete.getSize().height);
+        search.setBounds(searchLab.getLocation().x+80,searchLab.getLocation().y , name.getSize().width,name.getSize().height);
+        JSpinner aut = new JSpinner(new SpinnerNumberModel(1.50,null,null,0.01));
+        pan1.add(aut);
+        JSpinner poid = new JSpinner(new SpinnerNumberModel(55,40,null,1));
+        pan1.add(poid);
+        pan1.add(bd);
+        pan1.add(field);
+        pan1.add(field2);
+        pan1.add(sexe);
+        JRadioButton male = new JRadioButton("Nam ");
+        JRadioButton female = new JRadioButton("Nữ ");
+        ButtonGroup gender = new ButtonGroup();
+        JSpinner age = new JSpinner(new SpinnerNumberModel(19,18,65,1));
+        pan1.add(age);
+        age.setBounds(40,240,Lname.getSize().width,Lname.getSize().height+10);
+        field.setBounds(age.getLocation().x,age.getLocation().y+40,Lname.getSize().width,Lname.getSize().height+10);
+        field2.setBounds(age.getLocation().x+70,age.getLocation().y+40,(Lname.getSize().width)+10/2,Lname.getSize().height+10);
+        aut.setBounds(field.getLocation().x,field.getLocation().y+30,(Lname.getSize().width)/2,Lname.getSize().height+10);
+        poid.setBounds(field.getLocation().x+70,field.getLocation().y+30,(Lname.getSize().width)/2,Lname.getSize().height+10);
+        bd.setBounds(age.getLocation().x,age.getLocation().y-30,Lname.getSize().width,Lname.getSize().height+10);
+        gender.add(male);
+        gender.add(female);
+        pan1.add(male);
+        pan1.add(female);
+        male.setBounds(Lname.getLocation().x , Lname.getLocation().y+60,Lname.getSize().width,Lname.getSize().height+10);
+        female.setBounds(Lname.getLocation().x , Lname.getLocation().y+85,Lname.getSize().width,Lname.getSize().height+10);
+        FName.setBounds(name.getLocation().x , name.getLocation().y-20,name.getSize().width,name.getSize().height);
+        LName.setBounds(Lname.getLocation().x , Lname.getLocation().y-20,Lname.getSize().width,Lname.getSize().height);
+        sexe.setBounds(male.getLocation().x , male.getLocation().y-30,Lname.getSize().width,Lname.getSize().height+10);
+        pan1.add(FName);
+        pan1.add(LName);
+        JLabel copyright = new JLabel("-----   Copyright by Hà Tứ Huy   -----");
+        copyright.setBounds(350,545,300,20);
+        pan.add(copyright,BorderLayout.PAGE_END);
         
 	}
 
