@@ -46,31 +46,32 @@ public class MainActivity extends AppCompatActivity {
                 double chieuCao = Double.parseDouble(edtChieuCao.getText().toString());
                 double canNang = Double.parseDouble(edtCanNang.getText().toString());
                 double bmi = canNang / (chieuCao * chieuCao);
+
                 String ketQua = "";
                 // nữ
                 if(radNu.isChecked()){
                     if(bmi < 19){
-                        ketQua = "Bạn gầy. Cần tăng cân ngay!";
+                        ketQua = "Bạn gầy";
                     }else if(bmi >= 19 && bmi < 24){
-                        ketQua = "Bạn bình thường! Hãy giữ vững cân nặng";
+                        ketQua = "Bạn bình thường";
                     }else if(bmi >= 24 && bmi < 30){
-                        ketQua = "Bạn béo phì. Cần giảm cân ngay!";
+                        ketQua = "Bạn béo phì";
                     }else{
-                        ketQua = "Bạn béo phì cấp độ 2 .Cần giảm cân ngay!";
+                        ketQua = "Bạn béo phì cấp độ 2";
                     }
                 }else{
                     // nam
                     if(bmi < 20){
-                        ketQua = "Bạn gầy.  Cần tăng cân ngay!";
+                        ketQua = "Bạn gầy";
                     }else if(bmi >= 20 && bmi < 25){
-                        ketQua = "Bạn bình thường.  Hãy giữ vững cân nặng";
+                        ketQua = "Bạn bình thường";
                     }else if(bmi >= 25 && bmi < 30){
-                        ketQua = "Bạn béo phì.  Cần giảm cân ngay!";
+                        ketQua = "Bạn béo phì";
                     }else{
-                        ketQua = "Bạn béo phì cấp độ 2. Cần giảm cân ngay!";
+                        ketQua = "Bạn béo phì cấp độ 2";
                     }
                 }
-                edtKetQua.setText("Chỉ số BMI của bạn là: " + bmi + "\n" + ketQua);
+                edtKetQua.setText(ketQua);
             }
         });
     }
