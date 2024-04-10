@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 public class MainActivity extends AppCompatActivity {
     LandScapeAdapter landScapeAdapter;
@@ -26,9 +27,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewDatas = getDatForaRecyclerView();
         //4
         recyclerViewLandScape = findViewById(R.id.recycleLand);
-        //5
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerViewLandScape.setLayoutManager(layoutManager);
+//        //5 vertical
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerViewLandScape.setLayoutManager(layoutManager);
+        //5 horizontal
+        RecyclerView.LayoutManager layoutLinearHorizontal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewLandScape.setLayoutManager(layoutLinearHorizontal);
+        //5 grid
+         RecyclerView.LayoutManager layoutGrid = new GridLayoutManager(this, 2);
+        recyclerViewLandScape.setLayoutManager(layoutGrid);
         //6
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
         //7

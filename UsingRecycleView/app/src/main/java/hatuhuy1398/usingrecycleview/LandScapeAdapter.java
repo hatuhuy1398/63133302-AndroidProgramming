@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.widget.Toast;
+
 public class LandScapeAdapter extends RecyclerView.Adapter<LandScapeAdapter.ItemLandHolder>{
     Context context;
     ArrayList<LandScape> lstData;
@@ -47,13 +49,29 @@ public class LandScapeAdapter extends RecyclerView.Adapter<LandScapeAdapter.Item
         return lstData.size();
     }
 
-    class ItemLandHolder extends RecyclerView.ViewHolder {
+    class ItemLandHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvCaption;
         ImageView ivLandscape;
         public ItemLandHolder (@NonNull View itemView) {
             super(itemView);
             tvCaption = itemView.findViewById(R.id.textViewCaption);
             ivLandscape = itemView.findViewById(R.id.imageViewLand);
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            //code o day
+            int position = getAdapterPosition();
+            LandScape phanTuDuocChon = lstData.get(position);
+            //boc thong tin
+            String ten = phanTuDuocChon.getLandCaption();
+            String tenFile= phanTuDuocChon.getLandImageFileName();
+
+            //toast ten
+            String chuoiThongBao = "Ban vua click vao: " + ten;
+            Toast.makeText(context, chuoiThongBao, Toast.LENGTH_SHORT).show();
 
         }
     }
