@@ -18,20 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
-       binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.home:
-                    selectedFragment = new HomeFragment();
-                    break;
-                case R.id.profile:
-                    selectedFragment = new ProfileFragment();
-                    break;
-                case R.id.settings:
-                    selectedFragment = new SettingsFragment();
-                    break;
-            }
-            replaceFragment(selectedFragment);
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            if(item.getItemId() == R.id.home)
+                replaceFragment(new HomeFragment());
+            else if(item.getItemId() == R.id.profile)
+                replaceFragment(new ProfileFragment());
+            else if(item.getItemId() == R.id.settings)
+                replaceFragment(new SettingsFragment());
             return true;
         });
 
