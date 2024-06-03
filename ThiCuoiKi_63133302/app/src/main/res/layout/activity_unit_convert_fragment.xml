@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UnitConvertFragment"
+    android:padding="30dp">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:onClick="random"
+        android:text="Phép đổi đơn giản"
+        android:layout_marginBottom="20dp"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập km: "
+            android:textSize="25dp"/>
+        <EditText
+            android:id="@+id/et_so1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi ra m: "
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/et_kqm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập kg: "
+            android:textSize="25dp"/>
+        <EditText
+            android:id="@+id/et_so2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi ra g: "
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/et_kqg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập byte: "
+            android:textSize="25dp"/>
+        <EditText
+            android:id="@+id/et_so3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đổi ra bit: "
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/et_kqbit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_tinh"
+        android:layout_width="200dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="40dp"
+        android:backgroundTint="#03A9F4"
+        android:onClick="random"
+        android:text="Tính"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

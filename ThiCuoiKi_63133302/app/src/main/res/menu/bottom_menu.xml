@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/welcome"
+        android:title="Welcome Fragment"
+        android:icon="@drawable/baseline_home_24"
+        />
+    <item
+        android:id="@+id/unit"
+        android:title="Unit ConvertFragment"
+        android:icon="@drawable/baseline_home_filled_24"
+        />
+
+    <item
+        android:id="@+id/welknown"
+        android:title="Well Known Fragment"
+        android:icon="@drawable/baseline_library_music_24"
+        />
+    <item
+        android:id="@+id/subject"
+        android:title="Subject Fragment"
+        android:icon="@drawable/baseline_person_24"
+        />
+    <item
+        android:id="@+id/mycv"
+        android:title="My CV Fragment"
+        android:icon="@drawable/baseline_settings_24"
+        />
+</menu>
